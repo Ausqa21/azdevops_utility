@@ -3,8 +3,8 @@ from msrest.authentication import BasicAuthentication
 import pprint
 
 # Fill in with your personal access token and org URL
-personal_access_token = 'fdteif5bzvyknmogv7pylw24r4uw6pmedqssps32sf4oa27zeh5a'
-organization_url = 'https://dev.azure.com/ausqa21'
+personal_access_token = 'xxx'
+organization_url = 'yyy'
 
 # Create a connection to the org
 credentials = BasicAuthentication('', personal_access_token)
@@ -22,17 +22,3 @@ if get_projects_response is None:
 else:
     for x in range(len(get_projects_response)):
         pprint.pprint("[" + str(x) + "] " + get_projects_response[x].name)
-
-
-# index = 0
-# while get_projects_response is not None:
-#     for project in get_projects_response:
-#         pprint.pprint("[" + str(index) + "] " + project.name)
-#         index += 1
-#     if get_projects_response.continuation_token is not None and get_projects_response.continuation_token != "":
-#         # Get the next page of projects
-#         get_projects_response = core_client.get_projects(
-#             continuation_token=get_projects_response.continuation_token)
-#     else:
-#         # All projects have been retrieved
-#         get_projects_response = None
